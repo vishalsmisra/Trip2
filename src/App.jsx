@@ -76,11 +76,11 @@ export default function App() {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', minHeight: '100vh', background: '#fff' }}>
-      <div style={{ textAlign: 'center', marginTop: 60, marginBottom: 40 }}>
-        <h1 style={{ fontSize: 64, fontWeight: 800, color: '#16351a', letterSpacing: '-2px', marginBottom: 40 }}>Where to?</h1>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth: 700, margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', background: '#f7f7f7', borderRadius: 40, boxShadow: '0 2px 8px #eee', padding: '0 16px', width: '100%', maxWidth: 700, height: 64 }}>
-            <svg width="32" height="32" fill="none" stroke="#16351a" strokeWidth="2" viewBox="0 0 24 24" style={{ marginRight: 12 }}>
+      <div style={{ textAlign: 'center', marginTop: 40, marginBottom: 32, padding: '0 16px' }}>
+        <h1 style={{ fontSize: '8vw', maxFontSize: 64, fontWeight: 800, color: '#16351a', letterSpacing: '-2px', marginBottom: '7vw' }}>Where to?</h1>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', maxWidth: 700, margin: '0 auto', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', background: '#f7f7f7', borderRadius: 40, boxShadow: '0 2px 8px #eee', padding: '0 8px', width: '100%', maxWidth: 700, height: 56 }}>
+            <svg width="28" height="28" fill="none" stroke="#16351a" strokeWidth="2" viewBox="0 0 24 24" style={{ marginRight: 8 }}>
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
@@ -93,10 +93,12 @@ export default function App() {
                 border: 'none',
                 outline: 'none',
                 background: 'transparent',
-                fontSize: 22,
+                fontSize: '5vw',
+                minFontSize: 18,
+                maxFontSize: 22,
                 flex: 1,
                 color: '#333',
-                padding: '0 8px',
+                padding: '0 4px',
               }}
               required
             />
@@ -104,20 +106,22 @@ export default function App() {
               background: '#4be167',
               color: '#16351a',
               fontWeight: 600,
-              fontSize: 22,
+              fontSize: '5vw',
+              minFontSize: 18,
+              maxFontSize: 22,
               border: 'none',
               borderRadius: 32,
-              padding: '12px 32px',
-              marginLeft: 12,
+              padding: '10px 20px',
+              marginLeft: 8,
               cursor: 'pointer',
               boxShadow: '0 2px 8px #e0e0e0',
               transition: 'background 0.2s',
             }}>Search</button>
           </div>
         </form>
-        {status && <p style={{ marginTop: 24, color: '#555', fontSize: 18 }}>{status}</p>}
+        {status && <p style={{ marginTop: 18, color: '#555', fontSize: '4vw', minFontSize: 16, maxFontSize: 18 }}>{status}</p>}
       </div>
-      <div style={{ maxWidth: 700, margin: '0 auto' }}>
+      <div style={{ maxWidth: 700, margin: '0 auto', padding: '0 8px' }}>
         {responseData && (
           <ItineraryDisplay responseData={responseData} location={location} />
         )}
